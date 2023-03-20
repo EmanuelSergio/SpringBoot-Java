@@ -8,13 +8,13 @@
 		<version>3.0.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.emanuel</groupId>
-	<artifactId>SpringBoot-Java</artifactId>
+	<groupId>com.example</groupId>
+	<artifactId>Spring-Boot2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringBoot-Java</name>
+	<name>Spring-Boot2</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>19</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -29,9 +29,6 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			
-			
-			
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
