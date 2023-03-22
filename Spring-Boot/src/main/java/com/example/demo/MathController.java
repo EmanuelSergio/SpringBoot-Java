@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.exceptions.UnsupportedMathOperationException;
+
 @RestController
 public class MathController {
 
@@ -21,7 +23,7 @@ public class MathController {
 			) throws Exception	{
 		
 		if(!isNumeric(num1) || !isNumeric(num2)) {
-		throw new Exception();
+		throw new UnsupportedMathOperationException("COLOCA UM NUMERO AE");
 		}
 		
 		return convertToDouble(num1) + convertToDouble(num2);

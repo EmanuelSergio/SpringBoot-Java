@@ -11,6 +11,9 @@ public class UnsupportedMathOperationException extends RuntimeException {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	 
+	 public UnsupportedMathOperationException(String ex) {
+		// TODO Auto-generated constructor stub
+		 super(ex);
+	}
 	
 }
