@@ -27,9 +27,56 @@ public class MathController {
 		}
 		
 		return convertToDouble(num1) + convertToDouble(num2);
-		 
+		  
 	}
 
+	@GetMapping(value = "/sub/{num1}/{num2}")
+	public Double subtracao(@PathVariable String num1, @PathVariable String num2) throws Exception {
+		if(!isNumeric(num1) || !isNumeric(num2)) throw new UnsupportedMathOperationException("Coloca um numero certo ae");
+		
+		return convertToDouble(num1) - convertToDouble(num2);
+	}
+	
+	@GetMapping(value = "/mult/{num1}/{num2}")
+	public Double multiplicacao(@PathVariable String num1,@PathVariable String num2)throws Exception {
+		
+		if(!isNumeric(num1) || !isNumeric(num2)) {
+			throw new UnsupportedMathOperationException("Coloca um num certo ae");
+		}
+		
+		return convertToDouble(num1) * convertToDouble(num2);
+	}
+	
+	@GetMapping(value = "/div/{num1}/{num2}")
+	public Double divisao(@PathVariable String num1,@PathVariable String num2) throws Exception {
+		
+		if (!isNumeric(num1) || !isNumeric(num2)) {
+			throw new UnsupportedMathOperationException("num da div errado");
+		}
+		
+		return convertToDouble(num1) / convertToDouble(num2);
+	}
+	
+	@GetMapping(value = "/media/{num1}/{num2}")
+	public Double media(@PathVariable String num1,@PathVariable String num2) throws Exception{
+		
+		if (!isNumeric(num1) || !isNumeric(num2)) {
+			throw new UnsupportedMathOperationException("media errada amigao");
+		}
+		
+		return (convertToDouble(num1) + convertToDouble(num2)) /2;
+	}
+	
+	@GetMapping(value = "raiz/{num1}")
+	public Double raiz(@PathVariable String num1) throws Exception{
+		
+		if (!isNumeric(num1)) {
+			throw new UnsupportedMathOperationException("raiz errada meu chapa");
+		}
+		
+		return Math.sqrt(convertToDouble(num1));
+	}
+	
 	private Double convertToDouble(String strNumber) {
 		
 		if(strNumber == null) 	return 0D;
