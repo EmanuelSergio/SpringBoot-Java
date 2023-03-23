@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.controllers;
 
 //import java.util.concurrent.atomic.AtomicLong;
 
@@ -32,7 +32,7 @@ public class MathController {
 		
 		return math.sum(NumberConverter.convertToDouble(num1), NumberConverter.convertToDouble(num2)) ;
 		  
-	} 
+	}  
 
 	@GetMapping(value = "/sub/{num1}/{num2}")
 	public Double subtracao(@PathVariable String num1, @PathVariable String num2) throws Exception {
