@@ -31,7 +31,7 @@ public class PersonController {
 	
 	
 	@GetMapping(value ="/{id}")//esta requerindo valores obrigatorios
-	public Person findById(@PathVariable(value = "id") String id) throws Exception 	{
+	public Person findById(@PathVariable(value = "id") Long id) throws Exception 	{
 		return service.findById(id);
 		  
 	}  
