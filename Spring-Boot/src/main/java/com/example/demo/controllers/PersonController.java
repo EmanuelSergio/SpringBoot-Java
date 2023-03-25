@@ -3,12 +3,14 @@ package com.example.demo.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 //import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,9 +37,20 @@ public class PersonController {
 	}  
 
 	@PostMapping()//esta requerindo valores obrigatorios
-	public Person create(@RequestBody Person person) throws Exception 	{
+	public Person create(@RequestBody Person person) 	{
 		return service.create(person);
 		  
+	}  
+	
+	@PutMapping()//esta requerindo valores obrigatorios
+	public Person update(@RequestBody Person person) 	{
+		return service.update(person);
+		  
+	}  
+	
+	@DeleteMapping(value = "/{id}")//esta requerindo valores obrigatorios
+	public void delete(@PathVariable(value = "id") String id)  {
+		  service.delete(id);
 	}  
 	
 	@GetMapping()//esta requerindo valores obrigatorios

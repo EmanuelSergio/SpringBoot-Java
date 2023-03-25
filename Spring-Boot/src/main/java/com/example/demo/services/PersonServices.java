@@ -61,7 +61,7 @@ public class PersonServices {
 	}
 	
 	public Person create(Person person) {
-		logger.info("finding one person");
+		logger.info("creating one person");
 		
 		return person;
 		
@@ -69,10 +69,18 @@ public class PersonServices {
 	}
 	
 	public Person update(Person person) {
-		logger.info("finding one person");
+		logger.info("updating person");
 		
 		return person;
 		
 		
 	}
+	
+	public void delete(String id) {
+		logger.info("deleting person");
+	}
+	
+	
+	
 }
+
