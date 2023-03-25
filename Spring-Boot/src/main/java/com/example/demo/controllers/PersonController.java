@@ -49,7 +49,7 @@ public class PersonController {
 	}  
 	
 	@DeleteMapping(value = "/{id}")//esta requerindo valores obrigatorios
-	public void delete(@PathVariable(value = "id") String id)  {
+	public void delete(@PathVariable(value = "id") Long id)  {
 		  service.delete(id);
 	}  
 	
