@@ -2,7 +2,7 @@ package com.example.demo.services;
 
 import java.util.List;
 
-import java.util.logging.Logger;
+import java.util.logging.Logger; 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +18,7 @@ public class PersonServices {
 
 	@Autowired
 	PersonRepository repository;
-
+	
 	public List<Person> findAll() {
 		logger.info("finding all people");
 		return repository.findAll();

@@ -3,6 +3,7 @@ package com.example.demo.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 
 //import java.util.concurrent.atomic.AtomicLong;
@@ -48,9 +49,10 @@ public class PersonController {
 		  
 	}  
 	
-	@DeleteMapping(value = "/{id}")//esta requerindo valores obrigatorios
-	public void delete(@PathVariable(value = "id") Long id)  {
-		  service.delete(id);
+	@DeleteMapping(value = "/{id}")//esta requerindo valores obrigatorios	//o delete deve retornar um 204, pois não pode conter mais nada
+	public ResponseEntity<?> delete(@PathVariable(value = "id") Long id)  {
+			service.delete(id);
+		  return ResponseEntity.noContent().build();
 	}  
 	
 	@GetMapping()//esta requerindo valores obrigatorios
