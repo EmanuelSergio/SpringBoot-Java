@@ -12,9 +12,9 @@ import com.example.demo.model.Person;
 import com.example.demo.repositories.PersonRepository;
 
 @Service
-public class PersonServices {
+public class PersonServicesVO {
 
-	private Logger logger = Logger.getLogger(PersonServices.class.getName());
+	private Logger logger = Logger.getLogger(PersonServicesVO.class.getName());
 	
 	@Autowired
 	PersonRepository repository;
