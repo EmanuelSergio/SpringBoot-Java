@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.model.Person;
+import com.example.demo.data.vo.v1.PersonVO;
 import com.example.demo.services.PersonServices;
 
 @RestController
@@ -31,35 +31,32 @@ public class PersonController {
 	//rest parans = são parametros obrigatorios que, se não serem enviados a aplicacao pode quebrar
 	
 	
-	@GetMapping(value ="/{id}")//esta requerindo valores obrigatorios
-	public Person findById(@PathVariable(value = "id") Long id) throws Exception 	{
-		return service.findById(id);
-		  
-	}  
-
-	@PostMapping()//esta requerindo valores obrigatorios
-	public Person create(@RequestBody Person person) 	{
-		return service.create(person);
-		  
-	}  
-	
-	@PutMapping()//esta requerindo valores obrigatorios
-	public Person update(@RequestBody Person person) 	{
-		return service.update(person);
-		  
-	}  
-	
-	@DeleteMapping(value = "/{id}")//esta requerindo valores obrigatorios	//o delete deve retornar um 204, pois não pode conter mais nada
-	public ResponseEntity<?> delete(@PathVariable(value = "id") Long id)  {
-			service.delete(id);
-		  return ResponseEntity.noContent().build();
-	}  
-	
-	@GetMapping()//esta requerindo valores obrigatorios
-	public List<Person> findAll()  	{
+	@GetMapping
+	public List<PersonVO> findAll() {
 		return service.findAll();
-		  
-	}  
+	}
+	
+	@GetMapping(value = "/{id}")
+	public PersonVO findById(@PathVariable(value = "id") Long id) {
+		return service.findById(id);
+	}
+	
+	@PostMapping()
+	public PersonVO create(@RequestBody PersonVO person) {
+		return service.create(person);
+	}
+	
+	@PutMapping()
+	public PersonVO update(@RequestBody PersonVO person) {
+		return service.update(person);
+	}
+	
+	
+	@DeleteMapping(value = "/{id}")
+	public ResponseEntity<?> delete(@PathVariable(value = "id") Long id) {
+		service.delete(id);
+		return ResponseEntity.noContent().build();
+	}
 	
 	
 	
