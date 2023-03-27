@@ -3,31 +3,35 @@ package com.example.demo.data.vo.v1;
 import java.io.Serializable;
 import java.util.Objects;
 
+
+//@JsonPropertyOrder({"id", "firstName", "lastName", "addres", "gender"}) //indica em que ordem vai aparecer no json
 public class PersonVO implements Serializable{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 5790025844477124970L;
-
+	 
 	private Long id;
 	
+	//@JsonProperty("firs_name")
 	private String firstName;
 	
 	private String lastName;
 	
 	private String addres;
 	
+	//@JsonIgnore esta ignorando esse atributo no json
 	private String gender;
 	
 	public PersonVO() {
 		// TODO Auto-generated constructor stub
 	}
-
+		
 	public Long getId() {
 		return id;
 	}
-
+ 
 	public void setId(Long id) {
 		this.id = id;
 	}
