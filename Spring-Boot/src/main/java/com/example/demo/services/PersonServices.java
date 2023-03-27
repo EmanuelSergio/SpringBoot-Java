@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.data.vo.v1.PersonVO;
-import com.example.demo.data.vo.v2.PersonVOV2;
+//import com.example.demo.data.vo.v2.PersonVOV2;
 import com.example.demo.exceptions.ResourceNotFoundException;
 import com.example.demo.mapper.DozerMapper;
 import com.example.demo.mapper.custom.PersonMapper;
@@ -49,14 +49,14 @@ private Logger logger = Logger.getLogger(PersonServices.class.getName());
 		return vo;
 	}
 	
-	public PersonVOV2 createV2(PersonVOV2 person) {
-
-		logger.info("Creating one person with v2!");
-		var entity = mapper.convertVoToEntity(person);
-		var vo =  mapper.convertEntityToVo(repository.save(entity));
-		return vo;
-	}
-	
+//	public PersonVOV2 createV2(PersonVOV2 person) {
+//
+//		logger.info("Creating one person with v2!");
+//		var entity = mapper.convertVoToEntity(person);
+//		var vo =  mapper.convertEntityToVo(repository.save(entity));
+//		return vo;
+//	}
+//	
 	public PersonVO update(PersonVO person) {
 		
 		logger.info("Updating one person!");
