@@ -21,7 +21,7 @@ import com.example.demo.data.vo.v1.PersonVO;
 import com.example.demo.services.PersonServices;
 
 @RestController
-@RequestMapping("/person")
+@RequestMapping("/api/person/v1")
 public class PersonController {
 
 	@Autowired // esta instanciando pelo Spring boot
